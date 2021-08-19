@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
  
  const indexRouter=require("./routes/index")
  //const blogRouter=require('./routes/blog')
- const userRouter=require('./routes/user')
+ const userRouter=require('./routes/users')
 
  app.set("view engine", "ejs")
  app.set("views", __dirname+"/views")
@@ -35,6 +35,6 @@ app.use(express.urlencoded({extended:false}))
 app.use(methodOverrid("_method"))
 // ROUTES - CONTROLLERS
 app.use("/", indexRouter)
-app.use('/user',userRouter)
+app.use('/users',userRouter)
 
 app.listen(process.env.PORT || 3000)

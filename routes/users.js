@@ -4,25 +4,25 @@ const router=express.Router()
 //const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 router.get("/",(req,res)=>{
-  res.render('user/index')
+  res.render('users/index')
 })
 router.get("/new",(req,res)=>{
-    res.render('user/add')
+    res.render('users/new')
   })
 router.post("/",(req,res)=>{
-    res.render('')
+    res.render('users')
 })
 router.get("/:id",(req,res)=>{
-    res.render('user/show')
+    res.render('users/show')
 })
 router.get("/:id/edit",(req,res)=>{
-    res.render('user/edit')
+    res.render('users/edit')
 })
 router.put('/:id',(req,res)=>{
-    res.render('user/index')
+    res.render('users/index')
 })
 router.delete('/:id',(req,res)=>{
-    res.render('user/index')
+    res.render('users/index')
 })
 
 

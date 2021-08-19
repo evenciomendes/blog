@@ -1,9 +1,11 @@
 const usersSchema = new mongoose.Schema({
     name: {
-      type: String
+      type: String,
+      required:true
     },
     email: {
-      type: String
+      type: String,
+      required:true
     },
     password: {
       type: String
@@ -31,7 +33,10 @@ const usersSchema = new mongoose.Schema({
       },
     faceImageType: {
         type: String
-      }
+      },
+    biography:{
+      type:string
+    }
 })
 blogSchema.virtual('faceImagePath').get(function() {
     if (this.faceImage != null && this.faceImageType != null) {
