@@ -1,4 +1,7 @@
-const usersSchema = new mongoose.Schema({
+
+const mongoose = require('mongoose')
+
+const userSchema = new mongoose.Schema({
     name: {
       type: String,
       required:true
@@ -8,9 +11,10 @@ const usersSchema = new mongoose.Schema({
       required:true
     },
     password: {
-      type: String
+      type: String,
+      required:true
     },
-    dateOfBrith: {
+    dateOfBirth: {
       type: Date
     },
     timeOfBirth: {
@@ -22,12 +26,6 @@ const usersSchema = new mongoose.Schema({
     countryOfBirth: {
       type: String
     },
-    longitudeOfBirth:{
-        type:Number
-    },
-    latitudeOfBirth:{
-        type:Number
-    },
     faceImage: {
         type: Buffer
       },
@@ -35,12 +33,12 @@ const usersSchema = new mongoose.Schema({
         type: String
       },
     biography:{
-      type:string
+      type:String
     }
 })
-blogSchema.virtual('faceImagePath').get(function() {
+userSchema.virtual('faceImagePath').get(function() {
     if (this.faceImage != null && this.faceImageType != null) {
       return `data:${this.faceImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
     }
   })
- module.exports = mongoose.model('Users', usersSchema)
+ module.exports = mongoose.model('User', userSchema)

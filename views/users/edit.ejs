@@ -1,0 +1,38 @@
+<section class="site-section">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h1>Editar dados de usuário </h1>
+        </div>
+      </div>
+      <div class="row blog-entries">
+        <div class="col-md-12 col-lg-8 main-content">          
+            <form action="/users/<% user.id %>?_method=PUT" method="post">
+                <%- include('./_formFields') %>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                    <input type="submit" value="Adicionar Usuário" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- END main-content -->
+
+        <div class="col-md-12 col-lg-4 sidebar">
+          <%- include('./sidebar/searchKeyword') %>
+          <!-- END sidebar-box searchKeyword -->
+          <%- include('./sidebar/authorDetail') %>
+          <!-- END sidebar-box authorDetail-->  
+          <%- include('./sidebar/popularPosts') %>
+          <!-- END sidebar-box popularPosts-->
+          <%- include('./sidebar/categories') %>
+          <!-- END sidebar-box categories-->
+          <%- include('./sidebar/tags') %>
+          <!-- END sidebar tags -->
+        </div>
+        <!-- END sidebar -->
+
+      </div>
+    </div>
+  </section>
