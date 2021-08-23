@@ -12,8 +12,8 @@
               <div class="col-md-12">
                 <% users.forEach(user => { %>
                     <div class="post-entry-horzontal">
-                    <a href="/users">
-                        <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url(/images/img_10.jpg);"></div>
+                    <a href="/users/<%=user.id%>/edit">
+                        <img src="<%= user.faceImagePath %>" class="image element-animate" data-animate-effect="fadeIn">
                         <span class="text">
                         <div class="post-meta">
                             <span class="author mr-2"><img src="/images/person_1.jpg" alt="Colorlib"> <%=user.name%></span>&bullet;

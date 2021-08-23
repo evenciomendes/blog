@@ -1,9 +1,6 @@
 (function($) {
-
 	'use strict';
-
 	// bootstrap dropdown hover
-
   // loader
   var loader = function() {
     setTimeout(function() { 

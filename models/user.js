@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose')
-
+const faceImageBasePath='uploads/faceImage'
 const userSchema = new mongoose.Schema({
     name: {
       type: String,
@@ -29,6 +29,9 @@ const userSchema = new mongoose.Schema({
     faceImage: {
         type: Buffer
       },
+    faceImageName:{
+        type:String
+    },
     faceImageType: {
         type: String
       },
@@ -37,8 +40,12 @@ const userSchema = new mongoose.Schema({
     }
 })
 userSchema.virtual('faceImagePath').get(function() {
-    if (this.faceImage != null && this.faceImageType != null) {
+   /* if (this.faceImage != null && this.faceImageType != null) {
       return `data:${this.faceImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }*/
+    if (this.coverImageName != null) {
+      return path.join('/', faceImageBasePath, this.faceImageName)
     }
   })
  module.exports = mongoose.model('User', userSchema)
+ module.exports.faceImageBasePath = faceImageBasePath

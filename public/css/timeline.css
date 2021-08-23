@@ -1,0 +1,57 @@
+body{
+    background-color: #fff;
+  
+}
+.timeline-area{
+    margin: 10px auto;
+    width: 360px;
+    border-left: 2px solid red;
+    padding: 0 20px 0 30px; 
+}
+div{
+    background-color: #fff;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    line-height: 1.7;
+    position: relative;
+    height:40px;
+    margin-bottom: 2px;
+}
+/* ***************************  */
+
+div::before{
+    content:'';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color:#000 ;
+    border: 3px solid #ddd;
+    position: absolute;
+    top: 10px;
+    left: -40px;
+}
+div::after{
+    content:'';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent red transparent transparent;
+    border-width: 8px;
+    position: absolute;
+    left: -17px;
+    top: 10px;
+}
+div h2{
+    margin: 0;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+div h3{
+    margin: 0;
+    font-family: sans-serif;
+}
+div h4{
+    margin: 0;
+    font-family: sans-serif;
+}
